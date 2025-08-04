@@ -204,7 +204,7 @@ cat file3.txt
 ![Task 5.1](images/5.0.1.3.png)
 
 
-**Task 4.2:** Show the list of all running processes.
+**Task 5.2:** Show the list of all running processes.
 
 ```bash
 ps aux
