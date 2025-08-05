@@ -16,7 +16,7 @@
 | `who`                              | Show currently logged-in users             |
 | `useradd -m developer2`            | Create a new user with a home directory    |
 | `passwd`                           | Set user password                          |
-| `groupadd development2`           | Create a new group                         |
+| `groupadd development2`            | Create a new group                         |
 | `usermod -aG group user`           | Add user to group                          |
 | `chown` / `chgrp`                  | Change ownership and group of a file/dir   |
 | `chmod 740`                        | Set permissions for owner, group, others   |
