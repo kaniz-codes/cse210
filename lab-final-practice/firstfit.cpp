@@ -1,0 +1,66 @@
+/*======================
+Name: Kaniz Fatema
+ID: 20245103154
+========================*/
+
+#include <iostream>
+using namespace std;
+
+void firstfit(int n, int m, int process_size[], int partition_size[])
+{
+    int fragmentation=0;
+
+    bool allocated[n] = {0};
+
+    for (int i = 0; i < m; i++)
+    {
+        bool allocated_flag = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (allocated[j] || process_size[i] > partition_size[j])
+                continue;
+
+            cout << "P" << i + 1 << " ->" << j + 1 << endl;
+            allocated[j] = 1;
+            allocated_flag = 1;
+            fragmentation += partition_size[j] - process_size[i];
+            break;
+
+        }
+        if (!allocated_flag)
+        {
+            cout << "P" << i + 1 << " -> Not Allocated" << endl;
+        }
+    }
+    cout << endl;
+    cout<< "Total internal Fragmentation: "<< fragmentation<<endl;
+}
+
+int main()
+{
+    int n, m;
+
+    cin >> n; // number of partitions
+    int partition_size[n];
+    // sizes of each partition
+    for (int i = 0; i < n; i++)
+    {
+        cin >> partition_size[i];
+    }
+
+    // number of processes
+    cin >> m;
+    int process_size[m];
+    // sizes of each process
+    for (int i = 0; i < m; i++)
+    {
+        cin >> process_size[i];
+    }
+    
+    cout << endl;
+    cout << "First Fit:";
+    cout << endl;
+    firstfit(n, m, process_size, partition_size);
+    
+    return 0;
+}
